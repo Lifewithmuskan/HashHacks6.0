@@ -67,5 +67,11 @@ def classify_ecg_image(image_path):
         print("Error:", e)
         return None
 
+image_path = "D:/ECG/test/new_ecg_image.jpg"
+result = classify_ecg_image(image_path)
+if result is not None:
+    print("Predicted class:", result)
+
+
 
 
