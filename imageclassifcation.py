@@ -50,4 +50,22 @@ model.compile(optimizer='adam', loss='sparse_categorical_crossentropy', metrics=
 
 model.fit(X_train.reshape(-1, 128, 128, 1), y_train, epochs=5, batch_size=32)
 
+def classify_ecg_image(image_path):
+    try:
+        img = cv2.imread(image_path, cv2.IMREAD_GRAYSCALE)
+        if img is None:
+            raise FileNotFoundError("Unable to read the image. Check if the file exists and the path is correct.")
+        
+        img = cv2.resize(img, (128, 128))  # Resize image to 128x128 pixels
+        img = np.array(img) / 255.0  # Normalize pixel values
+        img = img.reshape(1, 128, 128, 1)  # Reshape image for model input
+        prediction = model.predict(img)
+        predicted_class = np.argmax(prediction)
+        classes = ['MI', 'History of MI', 'Abnormal heartbeat', 'Normal']
+        return classes[predicted_class]
+    except Exception as e:
+        print("Error:", e)
+        return None
+
+
 
