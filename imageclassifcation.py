@@ -14,4 +14,7 @@ def load_images(folder):
       labels.append(subfolder)
       
     return images, labels
+train_folder = "D:/ECG/train"
+train_images, train_labels = load_images_from_folder(train_folder)
+
 
