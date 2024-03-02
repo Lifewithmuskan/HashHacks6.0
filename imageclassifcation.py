@@ -46,4 +46,8 @@ model = Sequential([
 ])
 
 
+model.compile(optimizer='adam', loss='sparse_categorical_crossentropy', metrics=['accuracy'])
+
+model.fit(X_train.reshape(-1, 128, 128, 1), y_train, epochs=5, batch_size=32)
+
 
