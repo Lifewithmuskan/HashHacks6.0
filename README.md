@@ -13,7 +13,7 @@ The Heart Health Analyzer is an innovative project aimed at revolutionizing card
 1. **Clone the repository** to your local machine.
 2. **Install the required dependencies** using `pip install -r requirements.txt`.
 3. **Connect the hardware sensors** according to the provided instructions.
-4. **Run the main script** `heart_health_analyzer.py` to start the application.
+4. **Run the main script** `imageclassifcation.py` to start the application.
 
 ## Usage
 1. Ensure that the **hardware sensors are properly connected** and functioning.
